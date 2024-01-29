@@ -27,7 +27,7 @@ const Home: NextPage<Props> = (props: Props) => {
 
 			<Header />
 			<main className='relative'>
-				<Banner original={props.original} title='Banner Title' />
+				<Banner original={props.original} />
 			</main>
 		</div>
 	);
