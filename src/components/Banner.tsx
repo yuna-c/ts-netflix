@@ -2,12 +2,13 @@ import Image from 'next/image';
 import { Movie } from '../../types';
 import { useState, useEffect } from 'react';
 import { baseURL } from '@/url';
+import type { NextPage } from 'next';
 
 interface Props {
 	original: Movie[];
 }
 
-function Banner({ original }: Props) {
+const Banner: NextPage<Props> = ({ original }: Props) => {
 	const [Movie, setMovie] = useState<Movie | null>(null);
 	console.log(Movie);
 
@@ -37,6 +38,6 @@ function Banner({ original }: Props) {
 			)}
 		</section>
 	);
-}
+};
 
 export default Banner;
