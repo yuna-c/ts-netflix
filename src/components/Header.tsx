@@ -7,12 +7,11 @@ import Link from 'next/link';
 const Header = () => {
 	return (
 		<header className='w-full'>
-			<div className='flex items-center space-x-6 '>
+			<div className='flex items-center space-x-2 md:space-x-10 '>
 				<h1>
 					<Image src={logo} alt='netflix' width={100} height={100} className='cursor-pointer' />
 				</h1>
 
-				{/* tailwind: 반응형 (mobile first) */}
 				<ul className='space-x-4 hidden md:flex'>
 					<li className='headerLink'>HOME</li>
 					<li className='headerLink'>TV Show</li>
