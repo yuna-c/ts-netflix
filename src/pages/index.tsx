@@ -6,9 +6,6 @@ import { Movie } from '../../types';
 import Banner from '@/components/Banner';
 import List from '@/components/List';
 
-//npm i tailwind-scrollbar tailwind-scrollbar-hide
-//확장기능 headwind: tailwind구문에서 최적화된 순서에 맞게 구문 자동재배치 (ctrl+alt+T)
-
 interface Props {
 	original: Movie[];
 	top: Movie[];
@@ -19,8 +16,6 @@ interface Props {
 	action: Movie[];
 }
 
-//기존 Nexp Page 컴포넌트에 적용할 타입을 Next에 자체제공되고 있는 NextPage을 가져와서 페이지 타입 지정
-//해당 pageType을 우리가 만든것이 아니기 때문에 해당페이지에 전달되는 props의 type을 제네릭으로 지정
 const Home: NextPage<Props> = (props: Props) => {
 	return (
 		<div className='relative w-full h-screen overflow-x-hidden scrollbar-thin scrollbar-thumb-[red] scrollbar-track-[transparent]'>
@@ -32,8 +27,6 @@ const Home: NextPage<Props> = (props: Props) => {
 			<Header />
 			<main className='relative'>
 				<Banner original={props.original} />
-				{/* <List movies={props.sf} title={'Science Fiction'} />
-				<List movies={props.drama} title={'Drama'} /> */}
 				{Object.values(props).map((category, idx) => (
 					<List key={idx} movies={category} title={Object.keys(props)[idx]} />
 				))}
