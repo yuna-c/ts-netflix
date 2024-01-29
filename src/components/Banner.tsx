@@ -2,14 +2,13 @@ import Image from 'next/image';
 import { Movie } from '../../types';
 import { useState, useEffect, useRef } from 'react';
 import { baseURL } from '@/url';
-import type { NextPage } from 'next';
 import { FaPlay, FaInfoCircle } from 'react-icons/fa';
 
 interface Props {
 	original: Movie[];
 }
 
-const Banner: NextPage<Props> = ({ original }: Props) => {
+const Banner = ({ original }: Props) => {
 	//useRef에는 초기값이 없을수가 없으므로 직접 값을 수동으로 지정해야 되기 때문
 	//useState와 다르게 useRef는 unionType을 지정하지 않더라도 인수로 지정한 초기값을 자동으로 유니온타입 설정
 	const loading = useRef<HTMLDivElement>(null);
