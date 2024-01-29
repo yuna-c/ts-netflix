@@ -23,7 +23,7 @@ interface Props {
 //해당 pageType을 우리가 만든것이 아니기 때문에 해당페이지에 전달되는 props의 type을 제네릭으로 지정
 const Home: NextPage<Props> = (props: Props) => {
 	return (
-		<div className='relative w-full h-screen overflow-x-hidden'>
+		<div className='relative w-full h-screen overflow-x-hidden scrollbar-thin scrollbar-thumb-[red] scrollbar-track-[transparent]'>
 			<Head>
 				<title>NETFLIX</title>
 				<link rel='icon' href='/favicon.ico' />
