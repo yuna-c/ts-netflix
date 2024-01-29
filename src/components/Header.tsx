@@ -9,7 +9,8 @@ const Header = () => {
 					<Image src={logo} alt='netflix' width={100} height={100} className='cursor-pointer' />
 				</h1>
 
-				<ul className='flex gap-8'>
+				{/* tailwind: 반응형 (mobile first) */}
+				<ul className='space-x-r2 hidden md:flex'>
 					<li className='headerLink'>menu</li>
 					<li className='headerLink'>menu</li>
 					<li className='headerLink'>menu</li>
