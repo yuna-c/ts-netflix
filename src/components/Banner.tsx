@@ -3,6 +3,7 @@ import { Movie } from '../../types';
 import { useState, useEffect, useRef } from 'react';
 import { baseURL } from '@/url';
 import type { NextPage } from 'next';
+import { FaPlay, FaInfoCircle } from 'react-icons/fa';
 
 interface Props {
 	original: Movie[];
@@ -23,7 +24,7 @@ const Banner: NextPage<Props> = ({ original }: Props) => {
 	}, [original]);
 
 	return (
-		<section className='flex flex-col h-screen px-4 pt-40 pb-20 space-y-4 '>
+		<section className='flex flex-col h-screen px-4 pt-40 pb-20 space-y-4 md:space-y-10 lg:space-y-14'>
 			{Movie && (
 				<>
 					{/* pic Frame */}
@@ -52,7 +53,19 @@ const Banner: NextPage<Props> = ({ original }: Props) => {
 					<h1 className='relative z-[3] text-2xl font-bold md:text-4xl lg:text-7xl'>{Movie?.title || Movie?.name}</h1>
 
 					{/* overview */}
-					<p className='relative z-[3] text-xs md:text-lg lg:text-2xl'>{Movie?.overview}</p>
+					<p className='relative z-[3] text-xs  md:text-lg lg:text-2xl lg:w-[60%] '>{Movie?.overview}</p>
+
+					{/* button set */}
+					<nav className='relative z-[3] flex gap-3'>
+						<button className='bannerButton bg-[red]'>
+							<FaPlay />
+							Play
+						</button>
+						<button className='bannerButton'>
+							<FaInfoCircle />
+							More Info
+						</button>
+					</nav>
 				</>
 			)}
 		</section>
