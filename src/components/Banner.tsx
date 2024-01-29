@@ -16,7 +16,6 @@ const Banner: NextPage<Props> = ({ original }: Props) => {
 	//useState는 초기값을 집어넣지 않더라도 추후담기는 값을 인지해서 타입추론
 	//useState는 예외사항에 대한 값을 무조건 유니온타입으로 지정해야함
 	const [Movie, setMovie] = useState<Movie | null>(null);
-	console.log(Movie);
 
 	useEffect(() => {
 		const randomNum = Math.floor(Math.random() * original.length);
@@ -24,7 +23,7 @@ const Banner: NextPage<Props> = ({ original }: Props) => {
 	}, [original]);
 
 	return (
-		<section className='flex flex-col h-screen px-4 pt-40 pb-20 space-y-4 md:space-y-10 lg:space-y-14'>
+		<section className='flex flex-col h-[60vh] px-4 pt-40 pb-20 space-y-4 md:space-y-10 md:h-[70vh] lg:space-y-14 lg:h-[85vh]'>
 			{Movie && (
 				<>
 					{/* pic Frame */}
