@@ -13,7 +13,7 @@ interface IAuth {
 	signIn: (email: string, password: string) => Promise<void>;
 	signUp: (email: string, password: string) => Promise<void>;
 	logout: () => Promise<void>;
-	InitialLoading: Iloading;
+	InitialLoading: { current: boolean };
 }
 
 //전역State provider에 전달할 Props 타입
@@ -25,6 +25,7 @@ interface AuthProviderProps {
 const AuthContext = createContext<IAuth>({
 	UserInfo: null,
 	signUp: async () => {},
+	// 값이 없다 하더라도 함수 자체를 반환 할 수 있다 { 빈함수 }
 	signIn: async () => {},
 	logout: async () => {},
 	InitialLoading: { current: true }
