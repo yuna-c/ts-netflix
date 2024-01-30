@@ -1,11 +1,12 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
+import { initializeApp, getApp, getApps } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
 
-//해당 코드는 firebase객체를 직접 가져와서 설정값을 초기화한뒤
-//초기화설정이 완료된 firebase객체 자체를 export
-//원하는 컴포넌트에서 firebase객체를 import시 안쪽의 로그인, 로그아웃, 정보값 확인가능
+//initializeApp(configOpt) : firebase인증객체 생성시 필요한 초기정보값 등록
+//getApp : 초기 firebase객체를 생성
+//getApps : firebase생성된 서비스앱의 배열을 반환
+
 const firebaseConfig = {
-	apiKey: 'AIzaSyA9s7C8pnQjg_1dfuEGn-mTnp24j-F-ZWM',
+	apiKey: process.env.NEXT_PUBLIC_FIREBASE,
 	authDomain: 'next2024-470e3.firebaseapp.com',
 	projectId: 'next2024-470e3',
 	storageBucket: 'next2024-470e3.appspot.com',
@@ -13,6 +14,10 @@ const firebaseConfig = {
 	appId: '1:216833372730:web:f027b7bd960c834833fb03'
 };
 
-firebase.initializeApp(firebaseConfig);
+//초기에 firebase앱생성시 기존사용되고 있는 앱이 있다면 있는 앱을 불러오고 없다면 처음 초기세팅시작
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+const auth = getAuth(); //반환된 인증정보객체를 반환
 
-export default firebase;
+//app객체와 인증정보 객체 export
+export default app;
+export { auth };
