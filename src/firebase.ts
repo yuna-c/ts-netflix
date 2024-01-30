@@ -7,11 +7,11 @@ import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
 	apiKey: process.env.NEXT_PUBLIC_FIREBASE,
-	authDomain: 'next2024-470e3.firebaseapp.com',
-	projectId: 'next2024-470e3',
-	storageBucket: 'next2024-470e3.appspot.com',
-	messagingSenderId: '216833372730',
-	appId: '1:216833372730:web:f027b7bd960c834833fb03'
+	authDomain: 'next2024-a16bc.firebaseapp.com',
+	projectId: 'next2024-a16bc',
+	storageBucket: 'next2024-a16bc.appspot.com',
+	messagingSenderId: '378876527303',
+	appId: '1:378876527303:web:5a2b882b6560ba7d1674e2'
 };
 
 //초기에 firebase앱생성시 기존사용되고 있는 앱이 있다면 있는 앱을 불러오고 없다면 처음 초기세팅시작

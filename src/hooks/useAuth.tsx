@@ -25,7 +25,7 @@ const AuthContext = createContext<IAuth>({
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
 	const [UserInfo, setUserInfo] = useState<User | null>(null);
-	const InitialLoading = useRef<boolean>(true);
+	const InitialLoading = useRef<boolean>(false);
 	const router = useRouter();
 
 	useEffect(() => {
@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 				router.push('/login');
 			}
 			//한번이라도 인증로직이 실행되면 초기상태를 false로 변경
-			setTimeout(() => (InitialLoading.current = false), 0);
+			setTimeout(() => (InitialLoading.current = true), 0);
 		});
 	}, []);
 
