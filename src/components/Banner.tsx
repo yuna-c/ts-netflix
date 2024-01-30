@@ -4,6 +4,8 @@ import { Movie } from '../../types';
 import { useState, useEffect, useRef } from 'react';
 import { baseURL } from '@/url';
 import { FaPlay, FaInfoCircle } from 'react-icons/fa';
+import { modalState } from '@/recoil/globalAtom';
+import { useRecoilState } from 'recoil';
 
 interface Props {
 	original: Movie[];
@@ -12,6 +14,8 @@ interface Props {
 const Banner: FunctionComponent<Props> = ({ original }) => {
 	const loading = useRef<HTMLDivElement>(null);
 	const [Movie, setMovie] = useState<Movie | null>(null);
+	const [ShowModal, setShowModal] = useRecoilState(modalState);
+	console.log(ShowModal);
 
 	useEffect(() => {
 		const randomNum = Math.floor(Math.random() * original.length);
@@ -52,7 +56,12 @@ const Banner: FunctionComponent<Props> = ({ original }) => {
 
 					{/* button set */}
 					<nav className='relative z-[3] flex gap-3'>
-						<button className='bannerButton bg-[red]'>
+						<button
+							className='bannerButton bg-[red]'
+							onClick={() => {
+								console.log('click');
+								setShowModal(true);
+							}}>
 							<FaPlay />
 							Play
 						</button>
