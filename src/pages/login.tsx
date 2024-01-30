@@ -48,23 +48,26 @@ const Login: FunctionComponent = () => {
 					fill
 					priority
 					alt='login Page'
-					className='w-full h-screen z-[1] opacity-50 object-cover hidden md:block'
+					className='absolute w-full h-screen z-[1] opacity-50 object-cover hidden md:block'
 					onLoadingComplete={() => setIsLoading(false)}
 				/>
 
 				{/* loader */}
 				<BounceLoader
 					size={100}
-					loading={IsLoading}
+					loading={true}
 					color='orange'
 					className='absolute top-[50%] left-[50%] ml-[-50px] mt-[-50px] z-[2] opacity-100'
+					cssOverride={{ position: 'absolute' }}
 				/>
 
 				{/* logo */}
 				<Image width={150} height={150} src={logo} alt='nextflix' className='absolute left-4 top-4 cursor-pointer md:left-10 md:top-6 z-[3]' />
 
 				{/* submit이벤트 발생시 hadleSubmit이 인증처리를 해주고 인증의 결과값을 등록된 콜백함수에 전달 */}
-				<form onSubmit={handleSubmit(join)} className='relative z-[5] bg-black/70 py-10 px-6 space-y-8'>
+				<form
+					onSubmit={handleSubmit(join)}
+					className='w-[500px] absolute top-[50%] left-[50%] z-[5] bg-black/70 py-10 px-6 space-y-8 translate-x-[-50%] translate-y-[-50%]'>
 					<h1 className='text-4xl font-semibold'>Sign In</h1>
 
 					<div className='space-y-4'>
