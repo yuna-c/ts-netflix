@@ -15,14 +15,14 @@ const Login: FunctionComponent = () => {
 			</Head>
 
 			{/* frame */}
-			<div className='flex justify-center items-center w-full h-screen relative overflow-hidden'>
+			<div className='flex justify-center items-center w-full h-screen relative overflow-hidden p-10 md:p-0'>
 				{/* bg */}
 				<Image
 					src='https://rb.gy/p2hphi'
 					fill
 					priority
 					alt='login Page'
-					className='w-full h-screen z-[1] opacity-50 object-cover'
+					className='w-full h-screen z-[1] opacity-50 object-cover hidden md:block'
 					onLoadingComplete={() => setIsLoading(false)}
 				/>
 
