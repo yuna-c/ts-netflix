@@ -1,9 +1,9 @@
-import { link } from 'fs';
 import { Movie } from '../../types';
 import Image from 'next/image';
 import { baseURL } from '@/url';
 import { useRef } from 'react';
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
+import { FunctionComponent } from 'react';
 
 interface Props {
 	title: string;
@@ -15,18 +15,13 @@ interface ScrollProps {
 	clientWidth: number | null;
 }
 
-const List = ({ movies, title }: Props) => {
-	//listFrame에는 UL요소가 담기도록 type지정
+const List: FunctionComponent<Props> = ({ movies, title }) => {
 	const listFrame = useRef<HTMLUListElement>(null);
 
 	const handleClick = (direction: string) => {
-		//listFrame으로 가져오는 DOM속성객체를 담을 타입을 추가 지정
 		const scrollValue: ScrollProps | null = listFrame.current;
-
-		//각 객체값이 없을때를 대비한 예외처리로 0값 옵셔널 처리
 		const scrollLeft = scrollValue?.scrollLeft || 0;
 		const clientWidth = scrollValue?.clientWidth || 0;
-		//좌우버튼 클릭시 인수로 전달되는 방향값에 따라 가로축으로 이동할 타겟 위치값으 구해서 scrollTo 이동처리
 		const targetPos = direction === 'left' ? scrollLeft - clientWidth : scrollLeft + clientWidth;
 		listFrame.current?.scrollTo({ left: targetPos, behavior: 'smooth' });
 	};
