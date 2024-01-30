@@ -48,7 +48,7 @@ const Banner: FunctionComponent<Props> = ({ original }) => {
 					<h1 className='relative z-[3] text-2xl font-bold md:text-4xl lg:text-7xl'>{Movie?.title || Movie?.name}</h1>
 
 					{/* overview */}
-					<p className='relative z-[3] text-xs  md:text-lg lg:text-2xl lg:w-[60%] '>{Movie?.overview}</p>
+					<p className='z-[3] relative  text-xs  md:text-lg lg:text-2xl lg:w-[60%] '>{Movie?.overview}</p>
 
 					{/* button set */}
 					<nav className='relative z-[3] flex gap-3'>

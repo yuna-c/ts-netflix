@@ -31,7 +31,7 @@ const List: FunctionComponent<Props> = ({ movies, title }) => {
 			<h2 className='mb-2 text-lg md:text-xl lg:text-2xl'>{title}</h2>
 			<ul
 				ref={listFrame}
-				className='flex mb-4 overflow-x-auto scrollbar-thin scrollbar-thumb-[transparent] scrollbar-track-[transparent] md:mb-8 lg:mb-10 group-hover:scrollbar-thumb-[red]'>
+				className=' overflow-x-auto mb-4 flex   scrollbar-thin scrollbar-thumb-[transparent] scrollbar-track-[transparent] md:mb-8 lg:mb-10  group-hover:scrollbar-thumb-[red]'>
 				{movies.map((movie, idx) => {
 					return (
 						<li
@@ -44,7 +44,7 @@ const List: FunctionComponent<Props> = ({ movies, title }) => {
 			</ul>
 
 			<FaAngleLeft
-				className='absolute top-0 bottom-0 left-2 z-[5] m-auto h-12 cursor-pointer opacity-0 transition-opacity duration-[.5s] group-hover:opacity-100'
+				className='top-0 absolute  bottom-0 left-2 z-[5] m-auto h-12 cursor-pointer opacity-0 transition-opacity duration-[.5s] group-hover:opacity-100'
 				onClick={() => handleClick('left')}
 			/>
 			<FaAngleRight
